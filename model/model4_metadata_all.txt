@@ -1,0 +1,12 @@
+Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('logisticregression',
+                 LogisticRegression(C=10, max_iter=200,
+                                    multi_class='multinomial', solver='sag'))])
+{'Model Name': 'LogisticRegression', 'Training Score (CV)': 0.8101112723754232, 'Accuracy': 0.8888888888888888, 'Precision': 0.8888888888888888, 'Recall': 0.8888888888888888, 'F1 Score': 0.8888888888888888, 'Log Loss': 0.37577439931327405, 'ROC AUC': 0.8923076923076922}
+0.8101112723754232
+                   Model Name  Training Score (CV)  Accuracy  Precision    Recall  F1 Score  Log Loss   ROC AUC
+0          LogisticRegression             0.810111  0.888889   0.888889  0.888889  0.888889  0.375774  0.892308
+1                DecisionTree             0.784954  0.666667   0.666667  0.666667  0.666667  0.842945  0.607692
+2              KNN GridSearch             0.797533  0.722222   0.722222  0.722222  0.722222  2.369231  0.738462
+3      RandomForestClassifier             0.803943  0.666667   0.666667  0.666667  0.666667  0.476647  0.815385
+4  GradientBoostingClassifier             0.791122  0.833333   0.833333  0.833333  0.833333  0.479028  0.861538

@@ -1,0 +1,10 @@
+Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('gradientboostingclassifier', GradientBoostingClassifier())])
+{'Model Name': 'GradientBoostingClassifier', 'Training Score (CV)': 0.8438818565400844, 'Accuracy': 0.7037037037037037, 'Precision': 0.7037037037037037, 'Recall': 0.7037037037037037, 'F1 Score': 0.7037037037037037, 'Log Loss': 0.6800878740869827, 'ROC AUC': 0.8058823529411765}
+0.8438818565400844
+                   Model Name  Training Score (CV)  Accuracy  Precision    Recall  F1 Score  Log Loss   ROC AUC
+0          LogisticRegression             0.784810  0.703704   0.703704  0.703704  0.703704  0.633300  0.758824
+1                DecisionTree             0.801688  0.777778   0.777778  0.777778  0.777778  1.883160  0.682353
+2              KNN GridSearch             0.835443  0.703704   0.703704  0.703704  0.703704  1.760666  0.817647
+3      RandomForestClassifier             0.835443  0.740741   0.740741  0.740741  0.740741  0.501233  0.817647
+4  GradientBoostingClassifier             0.843882  0.703704   0.703704  0.703704  0.703704  0.680088  0.805882

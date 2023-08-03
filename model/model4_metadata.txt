@@ -1,0 +1,8 @@
+Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('logisticregression',
+                 LogisticRegression(C=10, max_iter=200,
+                                    multi_class='multinomial', solver='sag'))])
+{'Model Name': 'LogisticRegression', 'Training Score (CV)': 0.8101112723754232, 'Accuracy': 0.8888888888888888, 'Precision': 0.8888888888888888, 'Recall': 0.8888888888888888, 'F1 Score': 0.8888888888888888, 'Log Loss': 0.37571073560882706, 'ROC AUC': 0.8923076923076922}
+0.8101112723754232
+           Model Name  Training Score (CV)  Accuracy  Precision    Recall  F1 Score  Log Loss   ROC AUC
+0  LogisticRegression             0.810111  0.888889   0.888889  0.888889  0.888889  0.375711  0.892308

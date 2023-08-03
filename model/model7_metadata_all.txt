@@ -1,0 +1,10 @@
+Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('kneighborsclassifier', KNeighborsClassifier(n_neighbors=1))])
+{'Model Name': 'KNN GridSearch', 'Training Score (CV)': 0.8711656441717791, 'Accuracy': 0.8363636363636363, 'Precision': 0.8363636363636363, 'Recall': 0.8363636363636363, 'F1 Score': 0.8363636363636363, 'Log Loss': 5.898052372764625, 'ROC AUC': 0.7964285714285715}
+0.8711656441717791
+                   Model Name  Training Score (CV)  Accuracy  Precision    Recall  F1 Score  Log Loss   ROC AUC
+0          LogisticRegression             0.844581  0.763636   0.763636  0.763636  0.763636  0.562656  0.830000
+1                DecisionTree             0.822086  0.800000   0.800000  0.800000  0.800000  2.294116  0.807857
+2              KNN GridSearch             0.871166  0.836364   0.836364  0.836364  0.836364  5.898052  0.796429
+3      RandomForestClassifier             0.858896  0.800000   0.800000  0.800000  0.800000  0.527767  0.794286
+4  GradientBoostingClassifier             0.846626  0.800000   0.800000  0.800000  0.800000  0.538625  0.804286

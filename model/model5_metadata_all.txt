@@ -1,0 +1,11 @@
+Pipeline(steps=[('standardscaler', StandardScaler()),
+                ('decisiontreeclassifier',
+                 DecisionTreeClassifier(criterion='entropy', max_depth=4))])
+{'Model Name': 'DecisionTree', 'Training Score (CV)': 0.8034552845528454, 'Accuracy': 0.7142857142857143, 'Precision': 0.7142857142857143, 'Recall': 0.7142857142857143, 'F1 Score': 0.7142857142857143, 'Log Loss': 5.438054886900242, 'ROC AUC': 0.6499999999999999}
+0.8034552845528454
+                   Model Name  Training Score (CV)  Accuracy  Precision    Recall  F1 Score  Log Loss  ROC AUC
+0          LogisticRegression             0.754268  0.785714   0.785714  0.785714  0.785714  0.382091    0.875
+1                DecisionTree             0.803455  0.714286   0.714286  0.714286  0.714286  5.438055    0.650
+2              KNN GridSearch             0.794715  0.642857   0.642857  0.642857  0.642857  5.396646    0.600
+3      RandomForestClassifier             0.762805  0.785714   0.785714  0.785714  0.785714  0.390328    0.875
+4  GradientBoostingClassifier             0.770325  0.857143   0.857143  0.857143  0.857143  0.735203    0.875

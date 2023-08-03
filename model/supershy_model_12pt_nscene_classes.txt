@@ -1,0 +1,2 @@
+['Hit' 'Hit2' 'Hit3' 'L-Down' 'L-Ext' 'L-Fold' 'L-Keep' 'L-Up' 'Miss'
+ 'R-Fold' 'R-Keep']
