@@ -25,7 +25,7 @@ To reduce noise, 12 landmarks are chosen for the upper and lower limbs, with onl
 
 In the song "Super Shy", 10 poses across the 27 seconds choreography video were selected. To ensure that we get enough data for each pose, all information within an range of about 5-20 frames are collected, and this is done over 4 videos of the same dance choregraphy by other members of the same KPop group.   
 
-For each pose, the collected data are trained on 8 models for binary class classification modeling, with hyperparameter tuning using GridSearchCV. 
+For each pose, the collected data are trained on 8 models for binary class classification modeling, with hyperparameter tuning using GridSearchCV to obtain the optimal model. 
 
 The table below shows the aggregate scores of the top performing models. Do note that each pose may have a different optimal model.
 
