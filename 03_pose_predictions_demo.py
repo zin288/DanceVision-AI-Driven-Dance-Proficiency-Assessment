@@ -17,10 +17,11 @@ mp_pose = mp.solutions.pose
 """
 Usage:
 
-python 03_pose_predictions.py --model-name best_ymca_pose_model --input-video input.avi
+python 03_pose_predictions.py --model-name model1 --input-video input.avi
 
 python 03_pose_predictions.py --input-video input.avi
 """
+
 # Initialize the mixer module
 pygame.mixer.init()
 
@@ -79,21 +80,10 @@ if __name__ == '__main__':
     fourcc = cv2.VideoWriter_fourcc(*'XVID')  # or use 'XVID'
     out = cv2.VideoWriter(f'vid/annotated/{args["input_video"]}', fourcc,30.0, (width, height))
 
-
-    # # Initiate holistic model
-    # y_counter = 0
-    # m_counter = 0
-    # c_counter = 0
-    # a_counter = 0
-    # last_detected_pose = None
-    # number_of_new_pose_detections = 0
-
     with mp_pose.Pose(min_detection_confidence=0.6, min_tracking_confidence=0.5) as pose:
         frame_num = 0
         while cap.isOpened():
             ret, frame = cap.read()
-
-
 
             if not ret:
                 break
@@ -111,10 +101,7 @@ if __name__ == '__main__':
             image.flags.writeable = True
             image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
 
-
-
-            # Your existing code...
-            # 4. Pose Detections
+            # Pose Detections
             if not suppress_landmarks:
                 mp_drawing.draw_landmarks(image, results.pose_landmarks, mp_pose.POSE_CONNECTIONS,
                                           mp_drawing.DrawingSpec(color=(245, 117, 66), thickness=2, circle_radius=4),
@@ -187,13 +174,7 @@ if __name__ == '__main__':
                         # Calculate the width of the text box
                         text_width, _ = cv2.getTextSize(current_class_name, cv2.FONT_HERSHEY_SIMPLEX, 1, 2)[0]
         
-                        # Display the class name in the middle top of the frame
-                        # cv2.putText(image, f'NOW!{current_class_name}', 
-                        #             ((image.shape[1] - text_width) // 2, 50),  # Adjusted coordinates for text
-                        #             cv2.FONT_HERSHEY_SIMPLEX, 
-                        #             1,  # Font scale
-                        #             (255, 0, 0),  # Font color (white)
-                        #             2)  # Line thickness
+
                         class1 = body_language_class.split(' ')[0]
                         prob1 = str(round(body_language_prob[np.argmax(body_language_prob)], 2))
 
@@ -232,28 +213,6 @@ if __name__ == '__main__':
                
 
                 
-
-                # # Get status box
-                # status_width = 250
-                # cv2.rectangle(image, (0, 0), (status_width, 60), (245, 117, 16), -1)
-
-                # # Display Class
-                # cv2.putText(image, 'CLASS'
-                #             , (95, 12), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1, cv2.LINE_AA)
-                # cv2.putText(image, class1
-                #             , (90, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
-
-                # # Display Probability
-                # cv2.putText(image, 'PROB'
-                #             , (15, 12), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1, cv2.LINE_AA)
-                # cv2.putText(image, prob1
-                #             , (10, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
-
-                # # Display the frame number
-                # cv2.putText(image, 'Frame'
-                #             , (image.shape[1] - 100, 12), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1, cv2.LINE_AA)
-                # cv2.putText(image, str(frame_num)
-                #             , (image.shape[1] - 100, 40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
 
                 frame_num += 1
 

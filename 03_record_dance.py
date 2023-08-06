@@ -2,7 +2,6 @@ import cv2
 import pygame
 
 
-# Capture video from the webcam
 cap = cv2.VideoCapture(0) 
 
 # Define the codec and create a VideoWriter object
@@ -17,7 +16,6 @@ while(True):
     ret, frame = cap.read()
     print(frame_count)
 
-
     # Display the resulting frame
     cv2.imshow('frame', frame)
 
@@ -25,7 +23,6 @@ while(True):
     if frame_count == 150:
         print("Start recording...")
         recording = True
-
 
     # Record the frames to a file
     if recording:

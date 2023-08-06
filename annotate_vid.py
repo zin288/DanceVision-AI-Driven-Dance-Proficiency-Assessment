@@ -58,7 +58,8 @@ if __name__ == "__main__":
     ap.add_argument("--file-name", type=str, required=True, help="name of the input video file")
     args = ap.parse_args()
 
-    input_video_path = f'./vid/raw/{args.file_name}'  # Adjust path as needed
+    # input_video_path = f'./vid/raw/{args.file_name}'  # Adjust path as needed
+    input_video_path = f'./vid/annotated/{args.file_name}'  # Adjust path as needed
     output_video_path = f'./vid/annotated/{args.file_name}'  # Adjust path as needed
     frames_folder = f'./vid/frames/{args.file_name}_annot'  # Adjust path as needed
     annotate_video(input_video_path, output_video_path, frames_folder)
